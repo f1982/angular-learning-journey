@@ -1,0 +1,8 @@
+<p #title>hero-list works!</p>
+<div>
+  <li *ngFor="let hero of heroes">
+    <span>id: {{ hero.id }} </span>
+    <span>name: {{ hero.name }}</span>
+    <button type="button" (click)="onSelect(hero)">Select</button>
+  </li>
+</div>
