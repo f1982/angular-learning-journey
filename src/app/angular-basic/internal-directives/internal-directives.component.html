@@ -1,0 +1,10 @@
+<div [ngStyle]="{ border:'2px solid #ff0000', padding: '1rem'}">
+  <p [ngClass]="['class1','class2']">ngClass double classes</p>
+  <p [ngClass]="'class1'">ngClass single class</p>
+  <!-- class="saveable special" -->
+  <p [ngClass]="currentClasses">ngClass single class</p>
+  <p [ngStyle]="{ margin: '1rem' }">ngStyle styles</p>
+  <!-- [(ngModel)] for date binding -->
+  <input [(ngModel)]="currentData.name" />
+  <input [(ngModel)]="currentData.name" (ngModelChange)="setUppercaseName($event)" />
+</div>
