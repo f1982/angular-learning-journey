@@ -7,7 +7,7 @@ import { routes } from './app-routing.module';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  title = 'angular-tech-trails';
 
   items = [{ id: 0, path: '/' }, ...routes].filter(
     (route) => route.path !== '' && route.path !== '**'
