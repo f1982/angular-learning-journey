@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { MatTableExample } from './mat-table/mat-table.component';
 import { XyzComponent } from './xyz/xyz.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PspdfkitBasicComponent } from './pspdfkit-basic/pspdfkit-basic.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HeroItemComponent,
     HomeComponent,
     ExamplesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PspdfkitBasicComponent
   ],
   imports: [
     BrowserModule,

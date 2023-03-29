@@ -5,6 +5,7 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HomeComponent } from './home/home.component';
 import { MatTableExample } from './mat-table/mat-table.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PspdfkitBasicComponent } from './pspdfkit-basic/pspdfkit-basic.component';
 import { XyzComponent } from './xyz/xyz.component';
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: 'examples/hero', component: HeroListComponent },
   { path: 'examples/xyz', component: XyzComponent },
   { path: 'examples/mat-table', component: MatTableExample },
+  { path: 'examples/pspdfkit-basic', component: PspdfkitBasicComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
