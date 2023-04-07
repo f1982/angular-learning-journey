@@ -12,6 +12,8 @@ import { MatTableExample } from './mat-table/mat-table.component';
 import { XyzComponent } from './xyz/xyz.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PspdfkitBasicComponent } from './pspdfkit-basic/pspdfkit-basic.component';
+import { ExternalJsComponent } from './external-js/external-js.component';
+import { RouteParametersComponent } from './route-parameters/route-parameters.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PspdfkitBasicComponent } from './pspdfkit-basic/pspdfkit-basic.componen
     HomeComponent,
     ExamplesComponent,
     PageNotFoundComponent,
-    PspdfkitBasicComponent
+    PspdfkitBasicComponent,
+    ExternalJsComponent,
+    RouteParametersComponent
   ],
   imports: [
     BrowserModule,
