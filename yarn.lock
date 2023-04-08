@@ -11219,10 +11219,10 @@ prr@~1.0.1:
   resolved "https://registry.yarnpkg.com/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
   integrity sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==
 
-pspdfkit@^2023.1.4:
-  version "2023.1.4"
-  resolved "https://registry.yarnpkg.com/pspdfkit/-/pspdfkit-2023.1.4.tgz#bf1471d056258d97ef9f6217d5069beb3a58a05b"
-  integrity sha512-of7uavOLccMVkzy+Yv/+MzQbq7su2Uwn2eJLPH3dgI2AgHL6m1r3M0e8q5BYU48/1wfNgUJHND5zzkacIqYAcg==
+pspdfkit@^2022.5.0:
+  version "2022.5.5"
+  resolved "https://registry.yarnpkg.com/pspdfkit/-/pspdfkit-2022.5.5.tgz#f6a199554fb9eb8211b295a7651d74d1deede955"
+  integrity sha512-5ANIXpf4C/Eq1BmOGyfgAxTsOAOH8ltwJBTG3p3AUFEKYY64BCpGO4iaILPvrn7/w590IdGSZcOtCWp2yOJKHQ==
 
 public-encrypt@^4.0.0:
   version "4.0.3"

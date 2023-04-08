@@ -1,0 +1,44 @@
+<div class="app">
+  <div class="toolbar">
+    <h3>PSPDFKit Signing Fields Editing POC (Local)</h3>
+    <button (click)="saveAndMoveToNext()">Next</button>
+  </div>
+
+  <div class="container">
+    <div class="siderbar">
+      <div class="signee-list-section">
+        <label for="signee-list"> Signee </label>
+        <select
+          id="signee-list"
+          class="signee-select"
+          #selectSignee
+          (change)="onChange()"
+        >
+          <option
+            *ngFor="let signer of signerList"
+            value="{{ signer.id }}"
+            disabled="{{ signer.disabled ? 'disabled' : '' }}"
+          >
+            <span
+              >{{ signer.name }}
+              {{ signer.disabled ? "disabled" : "false" }}</span
+            >
+          </option>
+        </select>
+      </div>
+
+      <div class="add-field-section">
+        <label for="add-field-button"> Set up Signing Fields </label>
+        <button
+          #addFieldButton
+          id="add-field-button"
+          (click)="addSignatureField()"
+        >
+          Add Signature field
+        </button>
+      </div>
+    </div>
+    <!-- We'll mount the PSPDFKit UI to this element. -->
+    <div class="pspdfkit-container"></div>
+  </div>
+</div>
