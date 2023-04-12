@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PspdfkitBasicComponent } from './pspdfkit-basic/pspdfkit-basic.component';
 import { ExternalJsComponent } from './external-js/external-js.component';
 import { RouteParametersComponent } from './route-parameters/route-parameters.component';
+import { TinymceUploadComponent } from './tinymce-upload/tinymce-upload.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { RouteParametersComponent } from './route-parameters/route-parameters.co
     PageNotFoundComponent,
     PspdfkitBasicComponent,
     ExternalJsComponent,
-    RouteParametersComponent
+    RouteParametersComponent,
+    TinymceUploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    EditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

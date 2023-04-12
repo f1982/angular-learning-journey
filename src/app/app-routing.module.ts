@@ -10,6 +10,7 @@ import { XyzComponent } from './xyz/xyz.component';
 import { ExternalJsComponent } from './external-js/external-js.component';
 import { RouteParametersComponent } from './route-parameters/route-parameters.component';
 import { PSPDFKitEditorLocalComponent } from './pspdfkit-field-eidtor/pspdfkit-filed-editor-local.component';
+import { TinymceUploadComponent } from './tinymce-upload/tinymce-upload.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: 'examples/pspdfkit-field-editor-local', component: PSPDFKitEditorLocalComponent },
   { path: 'examples/external-js', component: ExternalJsComponent },
   { path: 'examples/route-parameters/:id/:name', component: RouteParametersComponent },
+  { path: 'examples/tinymce-upload', component: TinymceUploadComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

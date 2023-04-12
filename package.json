@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@tinymce/tinymce-angular": "^7.0.0",
     "pspdfkit": "^2022.5.0",
     "rxjs": "~7.5.0",
     "scriptjs": "^2.5.9",
