@@ -10,11 +10,12 @@ app.set('view engine', 'ejs');
 
 global.__basedir = __dirname;
 
-var corsOptions = {
-  origin: "http://localhost:8080"
-};
+// var corsOptions = {
+//   origin: "http://localhost:8080"
+// };
 
-app.use(cors(corsOptions));
+// Allow all incoming request from any origin
+app.use(cors());
 
 const initRoutes = require("./routes");
 

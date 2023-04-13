@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-  </head>
+  <head> </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Multiple file</h1>
+    <form
+      id="form_el"
+      class="new-project"
+      action="/upload"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label for="file">Select your image:</label>
+      <input
+        type="file"
+        multiple="multiple"
+        accept="image/*"
+        name="uploadedImages"
+        id="file"
+      />
+      <span class="hint">Supported files: jpg, jpeg, png.</span>
+      <button type="submit">upload</button>
+    </form>
+
+    <!-- Single file -->
+    <h1>Single file</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
       <input type="file" name="file" multiple />
       <button type="submit">Submit</button>

@@ -1,27 +1,49 @@
-const uploadFile = require("../middleware/upload");
+const uploadMiddleware = require("../middleware/upload");
 const fs = require('fs');
 
+const baseUrl = 'http://localhost:8080/files/'
+const baseFolder = '/public/files/'
+
 const home = async (req, res) => {
-  res.render('index', { title: 'E-Signature POC' });
+  res.render('index');
 }
 
 const upload = async (req, res) => {
   try {
-    await uploadFile(req, res);
-    console.log('req', req);
+    await uploadMiddleware.uploadFile(req, res);;
 
     if (req.file == undefined) {
       return res.status(400).send({ message: "Please upload a file!" });
     }
 
-    res.status(200).send({
-      message: "Uploaded the file successfully: " + req.file.originalname,
-    });
+    res.status(200).send(JSON.stringify({ location: baseUrl + req.file.originalname }));
   } catch (err) {
     console.log('err', err);
     res.status(500).send({
       message: `Could not upload the file: ${req.file.originalname}. ${err}`,
     });
+  }
+};
+
+const uploadMultiple = async (req, res) => {
+  try {
+    await uploadMiddleware.uploadFiles(req, res);
+    res.status(200).end('Your files uploaded.');
+  } catch (err) {
+    console.log('err', err);
+    if (err instanceof multer.MulterError) {
+      // A Multer error occurred when uploading.
+      res.status(500).send({ error: { message: `Multer uploading error: ${err.message}` } }).end();
+      return;
+    } else if (err) {
+      // An unknown error occurred when uploading.
+      if (err.name == 'ExtensionError') {
+        res.status(413).send({ error: { message: err.message } }).end();
+      } else {
+        res.status(500).send({ error: { message: `unknown uploading error: ${err.message}` } }).end();
+      }
+      return;
+    }
   }
 };
 
@@ -35,7 +57,6 @@ const getListFiles = (req, res) => {
       });
     }
 
-    const baseUrl = 'http://localhost:8080/public/files/'
     let fileInfos = [];
 
     files.forEach((file) => {
@@ -51,7 +72,8 @@ const getListFiles = (req, res) => {
 
 const download = (req, res) => {
   const fileName = req.params.name;
-  const directoryPath = __basedir + "/resources/static/assets/uploads/";
+  const directoryPath = __basedir + baseFolder;
+  console.log('directoryPath', directoryPath);
 
   res.download(directoryPath + fileName, fileName, (err) => {
     if (err) {
@@ -65,6 +87,7 @@ const download = (req, res) => {
 module.exports = {
   home,
   upload,
+  uploadMultiple,
   getListFiles,
   download,
 };
