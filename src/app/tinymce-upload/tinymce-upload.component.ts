@@ -15,9 +15,10 @@ export class TinymceUploadComponent implements OnInit {
 
   textCount: number = 2;
 
+  // Doc: https://www.tiny.cloud/docs/tinymce/6/file-image-upload/#automatic_uploads
   //TinyMCE API Key: 
   public tinyMCEConfig: any = {
-    skin: 'oxide-dark',
+    // skin: 'oxide-dark',
     statusbar: false,
     plugins: 'save lists link image table code help wordcount',
     toolbar: 'save',
@@ -25,7 +26,8 @@ export class TinymceUploadComponent implements OnInit {
       console.log('Save canceled');
     },
     automatic_uploads: true,
-    images_file_types: 'jpg,png',
+    images_file_types: '',
+    file_picker_types: 'file image media',
     images_upload_url: 'http://localhost:8080/upload',
     block_unsupported_drop: true,
     // images_upload_base_path: 'http://localhost:8080',
