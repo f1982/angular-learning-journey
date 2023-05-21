@@ -11,11 +11,13 @@ import { ExternalJsComponent } from './external-js/external-js.component';
 import { RouteParametersComponent } from './route-parameters/route-parameters.component';
 import { PSPDFKitEditorLocalComponent } from './pspdfkit-field-eidtor/pspdfkit-filed-editor-local.component';
 import { TinymceUploadComponent } from './tinymce-upload/tinymce-upload.component';
+import { NgModelComponent } from './ng-model/ng-model.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'examples', component: ExamplesComponent },
   { path: 'examples/hero', component: HeroListComponent },
+  { path: 'examples/ng-model', component: NgModelComponent },
   { path: 'examples/xyz', component: XyzComponent },
   { path: 'examples/mat-table', component: MatTableExample },
   { path: 'examples/pspdfkit-basic', component: PspdfkitBasicComponent },
