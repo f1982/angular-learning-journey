@@ -53,7 +53,7 @@ function observeSignatureStorage(instance: Instance) {
     });
   };
 
-  instance.addEventListener("storedSignatures.create", async (annotation) => {
+  instance.addEventListener("storedSignatures.create", async (annotation: { imageAttachmentId: any; }) => {
     console.log("storedSignatures.create. annotation", annotation);
     const signaturesString = localStorage.getItem(STORAGE_KEY);
     console.log("signaturesString", signaturesString);
@@ -88,11 +88,11 @@ function observeSignatureStorage(instance: Instance) {
     storedSignatures.push(serializedAnnotation);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storedSignatures));
     // Add a new annotation so that it renders as part of the UI on the current session.
-    instance.setStoredSignatures((signatures) => signatures.push(annotation));
+    instance.setStoredSignatures((signatures: any[]) => signatures.push(annotation));
   });
 
   //delete store signature
-  instance.addEventListener("storedSignatures.delete", (annotation) => {
+  instance.addEventListener("storedSignatures.delete", (annotation: { imageAttachmentId: any; }) => {
     const signaturesString = localStorage.getItem(STORAGE_KEY);
     const storedSignatures = signaturesString
       ? JSON.parse(signaturesString)
@@ -110,8 +110,8 @@ function observeSignatureStorage(instance: Instance) {
       )
     );
     // Use the `setStoredSignatures` API so that the current UI is properly updated.
-    instance.setStoredSignatures((signatures) =>
-      signatures.filter((signature) => !signature.equals(annotation))
+    instance.setStoredSignatures((signatures: any) =>
+      signatures.filter((signature: { equals: (arg0: any) => any; }) => !signature.equals(annotation))
     );
 
     if (annotation.imageAttachmentId) {

@@ -16,6 +16,10 @@ import { ExternalJsComponent } from './external-js/external-js.component';
 import { RouteParametersComponent } from './route-parameters/route-parameters.component';
 import { TinymceUploadComponent } from './tinymce-upload/tinymce-upload.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import {
+  FormsModule
+} from '@angular/forms';
+import { NgModelComponent } from './ng-model/ng-model.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +37,14 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     PspdfkitBasicComponent,
     ExternalJsComponent,
     RouteParametersComponent,
-    TinymceUploadComponent
+    TinymceUploadComponent,
+    NgModelComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     EditorModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

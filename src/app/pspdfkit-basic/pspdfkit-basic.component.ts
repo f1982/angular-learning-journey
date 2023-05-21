@@ -18,10 +18,10 @@ export const initialToolbarItems: ToolbarItem[] = [
   { type: 'spacer' },
 ];
 
-import {
-  observeSignatureStorage,
-  restoreSavedSignatures,
-} from '../../utils/signature-storage-utils';
+// import {
+//   observeSignatureStorage,
+//   restoreSavedSignatures,
+// } from '../../utils/signature-storage-utils';
 import './pkcs7';
 
 @Component({
@@ -53,7 +53,7 @@ export class PspdfkitBasicComponent {
 
       this.attachListeners(instance);
       // Load the saved signatures from local storage
-      restoreSavedSignatures(instance);
+      // restoreSavedSignatures(instance);
 
       // Test out the comment feature, but it's only can showcase on server mode
       // initInstantComments(instance);
@@ -108,7 +108,7 @@ export class PspdfkitBasicComponent {
     //Observe annotation events
     this.observeAnnotation(instance);
     // Observe signature storage related events
-    observeSignatureStorage(instance);
+    // observeSignatureStorage(instance);
   }
 
   observeAnnotation(instance: Instance) {
